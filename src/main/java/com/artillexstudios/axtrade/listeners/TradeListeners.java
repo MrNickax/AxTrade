@@ -30,6 +30,7 @@ public class TradeListeners implements Listener {
         handleQuitRequest(event);
     }
 
+    @EventHandler
     public void handleQuitTrade(@NotNull PlayerQuitEvent event) {
         Player player = event.getPlayer();
         Trade trade = Trades.getTrade(player);
@@ -37,6 +38,7 @@ public class TradeListeners implements Listener {
         trade.abort();
     }
 
+    @EventHandler
     public void handleQuitRequest(@NotNull PlayerQuitEvent event) {
         Iterator<Request> iterator = Requests.getRequests().iterator();
         while (iterator.hasNext()) {
